@@ -65,23 +65,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>fun</title>
-      <link>https://dmalau.github.io/tags/fun/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://dmalau.github.io/tags/fun/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://dmalau.github.io/tags/git/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://dmalau.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
