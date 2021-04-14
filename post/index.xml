@@ -6,10 +6,26 @@
     <description>Recent content in Posts on My Life Journey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2020 12:43:20 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 14 Apr 2021 11:12:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dmalau.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>StupidBot Fix untuk Error &#34;Scraping pagination links&#34;</title>
+      <link>https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-pagination-links/</link>
+      <pubDate>Wed, 14 Apr 2021 11:12:00 +0000</pubDate>
+      
+      <guid>https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-pagination-links/</guid>
+      <description>Buka file ini:
+stupidbot &amp;gt; engine &amp;gt; recipe &amp;gt; content_script.js
+Cek baris ke-27:
+$(&amp;quot;ul li a.media&amp;quot;).each(function (index) {
+Ganti menjadi:
+$(&amp;quot;ul li.flex a&amp;quot;).each(function (index) {
+Bisa lihat gambar jika kurang jelas.
+Sebelum Sesudah Semoga membantu. :)</description>
+    </item>
     
     <item>
       <title>How to Make Floating Banner Ads</title>

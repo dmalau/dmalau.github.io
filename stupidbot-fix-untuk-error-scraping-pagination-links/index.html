@@ -34,13 +34,7 @@
   <link rel="stylesheet" href="https://dmalau.github.io/css/bootstrap.min.css" />
 
   
-  
-  
-    
-      
-    
-  
-  <title>Posts | My Life Journey</title>
+  <title>StupidBot Fix untuk Error &#34;Scraping pagination links&#34; | My Life Journey</title>
   
 
   <style>
@@ -189,69 +183,33 @@ blockquote,
   
   <div class="container">
     <article>
-      
-
+      <h1>StupidBot Fix untuk Error &ldquo;Scraping pagination links&rdquo;</h1>
+<p>
+  <small class="text-secondary">
   
-    
   
-
-<h1>Posts</h1>
-
-
-
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-pagination-links/">StupidBot Fix untuk Error &ldquo;Scraping pagination links&rdquo;</a>
-    
-    
-    <br>
-    <small class="text-secondary">Apr 14, 2021</small>
-    
+  Apr 14, 2021
+  </small>
+  
 
 <small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
 
 
 <small><code><a href="https://dmalau.github.io/tags/stupidbot">stupidbot</a></code></small>
 
-    
-  </p>
-
-  <p>
-    <a href="https://dmalau.github.io/how-to-make-floating-banner-ads/">How to Make Floating Banner Ads</a>
-    
-    
-    <br>
-    <small class="text-secondary">Oct 10, 2020</small>
-    
-
-<small><code><a href="https://dmalau.github.io/tags/floating">floating</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/banner">banner</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/ads">ads</a></code></small>
-
-    
-  </p>
-
-  <p>
-    <a href="https://dmalau.github.io/script-to-add-a-page-level-variable-to-content-front-matter-in-hugo/">Script to add a page-level variable to content front matter in hugo</a>
-    
-    
-    <br>
-    <small class="text-secondary">Oct 10, 2018</small>
-    
-
-<small><code><a href="https://dmalau.github.io/tags/hugo">hugo</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/command-line">command-line</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/awk">awk</a></code></small>
-
-    
-  </p>
+</p>
+<p>Buka file ini:</p>
+<p><code>stupidbot &gt; engine &gt; recipe &gt; content_script.js</code></p>
+<p>Cek baris ke-27:</p>
+<p><code>$(&quot;ul li a.media&quot;).each(function (index) {</code></p>
+<p>Ganti menjadi:</p>
+<p><code>$(&quot;ul li.flex a&quot;).each(function (index) {</code></p>
+<p>Bisa lihat gambar jika kurang jelas.</p>
+<p>Sebelum
+<img src="https://i.imgur.com/sTCPNWI.png" alt="before"></p>
+<p>Sesudah
+<img src="https://i.imgur.com/d2sXU14.png" alt="after"></p>
+<p>Semoga membantu. :)</p>
 
     </article>
   </div>
