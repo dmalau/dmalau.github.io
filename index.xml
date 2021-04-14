@@ -23,6 +23,15 @@ Replace &amp;lt;!--replace this with your ads code--&amp;gt; with your banner co
     </item>
     
     <item>
+      <title>About</title>
+      <link>https://dmalau.github.io/about/</link>
+      <pubDate>Fri, 07 Aug 2020 17:00:00 +0000</pubDate>
+      
+      <guid>https://dmalau.github.io/about/</guid>
+      <description>Thank You Thanks for visiting my website. If you&amp;rsquo;re interested, checkout my facebook page at https://fb.com/daniel.malau.</description>
+    </item>
+    
+    <item>
       <title>Script to add a page-level variable to content front matter in hugo</title>
       <link>https://dmalau.github.io/script-to-add-a-page-level-variable-to-content-front-matter-in-hugo/</link>
       <pubDate>Wed, 10 Oct 2018 12:43:20 -0500</pubDate>
@@ -32,19 +41,6 @@ Replace &amp;lt;!--replace this with your ads code--&amp;gt; with your banner co
 The user wanted to loop through all her content files and add a weight page-level variable to the front matter. The value of weight needed to be the first 2 characters of the content filename, since her content was named like 01_content.md, 02_content.md, etc.
 She then wanted to range through her pages by their weight, like so:
 {{ range .</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://dmalau.github.io/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://dmalau.github.io/about/</guid>
-      <description>This Theme Thanks for visiting this theme demo. If you&amp;rsquo;re interested, checkout my other stuff over at https://zwbetz.com
-Hugo Hugo is the world’s fastest framework for building websites. It is written in Go.
-It makes use of a variety of open source projects including:
- https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.
-  _Favicon made by [Freepik](https://www.freepik.com/), from [Flaticon](https://www.flaticon.com/), licensed by [CC 3.0](http://creativecommons.org/licenses/by/3.0/)._  </description>
     </item>
     
   </channel>

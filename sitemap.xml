@@ -38,6 +38,11 @@
   </url>
   
   <url>
+    <loc>https://dmalau.github.io/about/</loc>
+    <lastmod>2020-08-07T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dmalau.github.io/tags/awk/</loc>
     <lastmod>2018-10-11T00:00:00+00:00</lastmod>
   </url>
@@ -55,11 +60,6 @@
   <url>
     <loc>https://dmalau.github.io/script-to-add-a-page-level-variable-to-content-front-matter-in-hugo/</loc>
     <lastmod>2018-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dmalau.github.io/about/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
