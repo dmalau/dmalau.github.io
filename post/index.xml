@@ -28,6 +28,22 @@ Sebelum Sesudah Semoga membantu. :)</description>
     </item>
     
     <item>
+      <title>StupidBot Fix untuk Error &#34;Scraping finished&#34;</title>
+      <link>https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-0-recipes/</link>
+      <pubDate>Tue, 13 Apr 2021 11:12:00 +0000</pubDate>
+      
+      <guid>https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-0-recipes/</guid>
+      <description>Buka file ini:
+stupidbot &amp;gt; engine &amp;gt; recipe &amp;gt; content_script.js
+Cek baris ke-22:
+return $(&amp;quot;h1 span&amp;quot;).text();
+Ganti menjadi:
+return $(&amp;quot;h1.flex-1 span&amp;quot;).text();
+Bisa lihat gambar jika kurang jelas.
+Sebelum Sesudah Semoga membantu. :)</description>
+    </item>
+    
+    <item>
       <title>How to Make Floating Banner Ads</title>
       <link>https://dmalau.github.io/how-to-make-floating-banner-ads/</link>
       <pubDate>Fri, 09 Oct 2020 12:43:20 -0500</pubDate>

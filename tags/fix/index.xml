@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fix on My Life Journey</title>
+    <link>https://dmalau.github.io/tags/fix/</link>
+    <description>Recent content in fix on My Life Journey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Apr 2021 11:12:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dmalau.github.io/tags/fix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>StupidBot Fix untuk Error &#34;Scraping finished&#34;</title>
+      <link>https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-0-recipes/</link>
+      <pubDate>Tue, 13 Apr 2021 11:12:00 +0000</pubDate>
+      
+      <guid>https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-0-recipes/</guid>
+      <description>Buka file ini:
+stupidbot &amp;gt; engine &amp;gt; recipe &amp;gt; content_script.js
+Cek baris ke-22:
+return $(&amp;quot;h1 span&amp;quot;).text();
+Ganti menjadi:
+return $(&amp;quot;h1.flex-1 span&amp;quot;).text();
+Bisa lihat gambar jika kurang jelas.
+Sebelum Sesudah Semoga membantu. :)</description>
+    </item>
+    
+  </channel>
+</rss>
