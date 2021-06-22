@@ -24,7 +24,9 @@ $(&amp;quot;ul li a.media&amp;quot;).each(function (index) {
 Ganti menjadi:
 $(&amp;quot;ul li.flex a&amp;quot;).each(function (index) {
 Bisa lihat gambar jika kurang jelas.
-Sebelum Sesudah Semoga membantu. :)</description>
+Sebelum:
+Sesudah:
+Semoga membantu. :)</description>
     </item>
     
     <item>
