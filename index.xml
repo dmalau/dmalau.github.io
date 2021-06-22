@@ -40,7 +40,9 @@ return $(&amp;quot;h1 span&amp;quot;).text();
 Ganti menjadi:
 return $(&amp;quot;h1.flex-1 span&amp;quot;).text();
 Bisa lihat gambar jika kurang jelas.
-Sebelum Sesudah Semoga membantu. :)</description>
+Sebelum
+Sesudah
+Semoga membantu. :)</description>
     </item>
     
     <item>
