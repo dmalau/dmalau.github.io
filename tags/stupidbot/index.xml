@@ -6,10 +6,28 @@
     <description>Recent content in stupidbot on My Life Journey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Apr 2021 11:12:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Jul 2021 01:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dmalau.github.io/tags/stupidbot/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>StupidBot Fix untuk Error &#34;Scraping finished&#34; 8 Juli 2021</title>
+      <link>https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-8-juli-2021/</link>
+      <pubDate>Thu, 08 Jul 2021 01:00:00 +0000</pubDate>
+      
+      <guid>https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-8-juli-2021/</guid>
+      <description>Buka file ini:
+stupidbot &amp;gt; engine &amp;gt; recipe &amp;gt; content_script.js
+Cek baris ke-22:
+return $(&amp;quot;h1 span&amp;quot;).text();
+Ganti menjadi:
+return $(&amp;quot;h1.flex-1 span&amp;quot;).text().replace(/[^0-9,]+/g,&#39;&#39;);
+Bisa lihat gambar jika kurang jelas.
+Sebelum:
+Sesudah:
+Semoga membantu. :)</description>
+    </item>
     
     <item>
       <title>StupidBot Fix untuk Error &#34;Scraping pagination links&#34;</title>
