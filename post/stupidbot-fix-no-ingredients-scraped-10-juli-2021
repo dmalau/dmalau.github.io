@@ -1,0 +1,43 @@
++++
+date = 2021-07-10T01:00:00Z
+draft = false
+lastmod = 2021-07-10T01:00:00Z
+tags = ["error", "stupidbot", "fix"]
+title = "StupidBot Fix untuk Error No Ingredients Scraped 10 Juli 2021"
+
++++
+Buka file ini:  
+  
+`stupidbot > engine > recipe > content_script.js`
+
+Cek baris ke-78 sampai ke-84:
+
+`    $("li.ingredient").each(function (i) {
+        var ingredient = {};
+        ingredient.quantity = $(this)
+            .find(".ingredient__quantity")
+            .text()
+            .trim();
+        $(this).find(".ingredient__quantity").remove();`
+
+Ganti menjadi:
+
+`    $("li.leading-tight").each(function (i) {
+        var ingredient = {};
+        ingredient.quantity = $(this)
+            .find(".font-semibold")
+            .text()
+            .trim();
+        $(this).find(".font-semibold").remove();`
+
+Bisa lihat gambar jika kurang jelas.
+
+Sebelum:
+
+![before](https://i.imgur.com/aSs4kLi.jpg)
+
+Sesudah:
+
+![after](https://i.imgur.com/6TcUpNC.jpg)
+
+Semoga membantu. :)
