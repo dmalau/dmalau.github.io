@@ -6,7 +6,7 @@
     <description>Recent content in stupidbot on My Life Journey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jul 2021 01:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dmalau.github.io/tags/stupidbot/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,19 +14,13 @@
     <item>
       <title>StupidBot Fix untuk Error No Ingredients Scraped 10 Juli 2021</title>
       <link>https://dmalau.github.io/stupidbot-fix-no-ingredients-scraped-10-juli-2021/</link>
-      <pubDate>Fri, 09 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 09 Jul 2021 01:00:00 +0000</pubDate>
       
       <guid>https://dmalau.github.io/stupidbot-fix-no-ingredients-scraped-10-juli-2021/</guid>
       <description>Buka file ini:
 stupidbot &amp;gt; engine &amp;gt; recipe &amp;gt; content_script.js
 Cek baris ke-78 sampai ke-84:
- $(&amp;quot;li.ingredient&amp;quot;).each(function (i) { var ingredient = {}; ingredient.quantity = $(this) .find(&amp;quot;.ingredient__quantity&amp;quot;) .text() .trim(); $(this).find(&amp;quot;.ingredient__quantity&amp;quot;).remove();
-Ganti menjadi:
- $(&amp;quot;li.leading-tight&amp;quot;).each(function (i) { var ingredient = {}; ingredient.quantity = $(this) .find(&amp;quot;.font-semibold&amp;quot;) .text() .trim(); $(this).find(&amp;quot;.font-semibold&amp;quot;).remove();
-Bisa lihat gambar jika kurang jelas.
-Sebelum:
-Sesudah:
-Semoga membantu. :)</description>
+var ingredient = {}; ingredient.quantity = $(this) .find(&amp;quot;.ingredient__quantity&amp;quot;) .text() .trim(); $(this).find(&amp;quot;.ingredient__quantity&amp;quot;).remove();``` Ganti menjadi: ``` $(&amp;quot;li.leading-tight&amp;quot;).each(function (i) {&amp;lt;br&amp;gt; var ingredient = {}; ingredient.quantity = $(this) .find(&amp;quot;.font-semibold&amp;quot;) .text() .trim(); $(this).find(&amp;quot;.font-semibold&amp;quot;).remove();``` Bisa lihat gambar jika kurang jelas. Sebelum: ![before](https://i.imgur.com/aSs4kLi.jpg) Sesudah: ![after](https://i.imgur.com/6TcUpNC.jpg) Semoga membantu. :) </description>
     </item>
     
     <item>
