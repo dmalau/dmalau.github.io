@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="https://dmalau.github.io/css/bootstrap.min.css" />
 
   
-  <title>error | My Life Journey</title>
+  <title>StupidBot Fix untuk Error No Ingredients Scraped 10 Juli 2021 | My Life Journey</title>
   
 
   <style>
@@ -183,17 +183,14 @@ blockquote,
   
   <div class="container">
     <article>
-      <h1>error</h1>
-
-
-
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-no-ingredients-scraped-10-juli-2021/">StupidBot Fix untuk Error No Ingredients Scraped 10 Juli 2021</a>
-    
-    
-    <br>
-    <small class="text-secondary">Jul 10, 2021</small>
-    
+      <h1>StupidBot Fix untuk Error No Ingredients Scraped 10 Juli 2021</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  Jul 10, 2021
+  </small>
+  
 
 <small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
 
@@ -203,62 +200,19 @@ blockquote,
 
 <small><code><a href="https://dmalau.github.io/tags/fix">fix</a></code></small>
 
-    
-  </p>
-
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-8-juli-2021/">StupidBot Fix untuk Error &ldquo;Scraping finished&rdquo; 8 Juli 2021</a>
-    
-    
-    <br>
-    <small class="text-secondary">Jul 8, 2021</small>
-    
-
-<small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/stupidbot">stupidbot</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/fix">fix</a></code></small>
-
-    
-  </p>
-
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-pagination-links/">StupidBot Fix untuk Error &ldquo;Scraping pagination links&rdquo;</a>
-    
-    
-    <br>
-    <small class="text-secondary">Apr 14, 2021</small>
-    
-
-<small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/stupidbot">stupidbot</a></code></small>
-
-    
-  </p>
-
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-0-recipes/">StupidBot Fix untuk Error &ldquo;Scraping finished&rdquo;</a>
-    
-    
-    <br>
-    <small class="text-secondary">Apr 13, 2021</small>
-    
-
-<small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/stupidbot">stupidbot</a></code></small>
-
-
-<small><code><a href="https://dmalau.github.io/tags/fix">fix</a></code></small>
-
-    
-  </p>
+</p>
+<p>Buka file ini:</p>
+<p><code>stupidbot &gt; engine &gt; recipe &gt; content_script.js</code></p>
+<p>Cek baris ke-78 sampai ke-84:</p>
+<p><code>    $(&quot;li.ingredient&quot;).each(function (i) { var ingredient = {}; ingredient.quantity = $(this) .find(&quot;.ingredient__quantity&quot;) .text() .trim(); $(this).find(&quot;.ingredient__quantity&quot;).remove();</code></p>
+<p>Ganti menjadi:</p>
+<p><code>    $(&quot;li.leading-tight&quot;).each(function (i) { var ingredient = {}; ingredient.quantity = $(this) .find(&quot;.font-semibold&quot;) .text() .trim(); $(this).find(&quot;.font-semibold&quot;).remove();</code></p>
+<p>Bisa lihat gambar jika kurang jelas.</p>
+<p>Sebelum:</p>
+<p><img src="https://i.imgur.com/aSs4kLi.jpg" alt="before"></p>
+<p>Sesudah:</p>
+<p><img src="https://i.imgur.com/6TcUpNC.jpg" alt="after"></p>
+<p>Semoga membantu. :)</p>
 
     </article>
   </div>
