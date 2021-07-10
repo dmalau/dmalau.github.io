@@ -20,7 +20,11 @@
       <description>Buka file ini:
 stupidbot &amp;gt; engine &amp;gt; recipe &amp;gt; content_script.js
 Cek baris ke-78 sampai ke-84:
-var ingredient = {}; ingredient.quantity = $(this) .find(&amp;quot;.ingredient__quantity&amp;quot;) .text() .trim(); $(this).find(&amp;quot;.ingredient__quantity&amp;quot;).remove();``` Ganti menjadi: ``` $(&amp;quot;li.leading-tight&amp;quot;).each(function (i) {&amp;lt;br&amp;gt; var ingredient = {}; ingredient.quantity = $(this) .find(&amp;quot;.font-semibold&amp;quot;) .text() .trim(); $(this).find(&amp;quot;.font-semibold&amp;quot;).remove();``` Bisa lihat gambar jika kurang jelas. Sebelum: ![before](https://i.imgur.com/aSs4kLi.jpg) Sesudah: ![after](https://i.imgur.com/6TcUpNC.jpg) Semoga membantu. :) </description>
+ $(&amp;quot;li.ingredient&amp;quot;).each(function (i) { var ingredient = {}; ingredient.quantity = $(this) .find(&amp;quot;.ingredient__quantity&amp;quot;) .text() .trim(); $(this).find(&amp;quot;.ingredient__quantity&amp;quot;).remove(); Ganti menjadi:
+ $(&amp;quot;li.leading-tight&amp;quot;).each(function (i) { var ingredient = {}; ingredient.quantity = $(this) .find(&amp;quot;.font-semibold&amp;quot;) .text() .trim(); $(this).find(&amp;quot;.font-semibold&amp;quot;).remove(); Bisa lihat gambar jika kurang jelas.
+Sebelum:
+Sesudah:
+Semoga membantu. :)</description>
     </item>
     
     <item>
