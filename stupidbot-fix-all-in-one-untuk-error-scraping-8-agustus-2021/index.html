@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="https://dmalau.github.io/css/bootstrap.min.css" />
 
   
-  <title>stupidbot | My Life Journey</title>
+  <title>StupidBot Fix (All-in-One) untuk Error Scraping 8 Agustus 2021 | My Life Journey</title>
   
 
   <style>
@@ -183,17 +183,14 @@ blockquote,
   
   <div class="container">
     <article>
-      <h1>stupidbot</h1>
-
-
-
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-all-in-one-untuk-error-scraping-8-agustus-2021/">StupidBot Fix (All-in-One) untuk Error Scraping 8 Agustus 2021</a>
-    
-    
-    <br>
-    <small class="text-secondary">Aug 8, 2021</small>
-    
+      <h1>StupidBot Fix (All-in-One) untuk Error Scraping 8 Agustus 2021</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  Aug 8, 2021
+  </small>
+  
 
 <small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
 
@@ -203,81 +200,130 @@ blockquote,
 
 <small><code><a href="https://dmalau.github.io/tags/fix">fix</a></code></small>
 
-    
-  </p>
+</p>
+<p>Buka file ini:</p>
+<p><code>stupidbot &gt; engine &gt; recipe &gt; content_script.js</code></p>
+<p>Hapus semua isinya, copy-paste kode ini ke dalam file tersebut:</p>
+<pre><code>function getPageUrls() {
+    var recipeCount = getRecipeCount();
+    var maxPage = Math.ceil(recipeCount / 20);
+    if (recipeCount &gt; 240) {
+        maxPage = 12;
+    }
 
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-no-ingredients-scraped-10-juli-2021/">StupidBot Fix untuk Error No Ingredients Scraped 10 Juli 2021</a>
-    
-    
-    <br>
-    <small class="text-secondary">Jul 9, 2021</small>
-    
+    var pageURLs = [];
 
-<small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
+    for (var i = 1; i &lt;= maxPage; i++) {
+        pageURLs[i - 1] = window.location.href.split(&quot;?&quot;)[0] + &quot;?page=&quot; + i;
+    }
 
+    return pageURLs;
+}
 
-<small><code><a href="https://dmalau.github.io/tags/stupidbot">stupidbot</a></code></small>
+function baseURL() {
+    return &quot;https://cookpad.com&quot;;
+}
 
+function getRecipeCount() {
+    return $(&quot;h1.flex-1 span&quot;).text().replace(/[^0-9,]+/g,'');
+}
 
-<small><code><a href="https://dmalau.github.io/tags/fix">fix</a></code></small>
+function getRecipeUrls() {
+    var recipe_urls = [];
+    $(&quot;ul li.flex a&quot;).each(function (index) {
+        recipe_urls.push(baseURL() + $(this).attr(&quot;href&quot;));
+    });
 
-    
-  </p>
+    return $.unique(recipe_urls);
+}
 
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-8-juli-2021/">StupidBot Fix untuk Error &ldquo;Scraping finished&rdquo; 8 Juli 2021</a>
-    
-    
-    <br>
-    <small class="text-secondary">Jul 8, 2021</small>
-    
+function getTitleTag() {
+    return $(&quot;title&quot;).text();
+}
 
-<small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
+function isBlocked() {
+    var block_words = [&quot;denied&quot;, &quot;refus&quot;];
 
+    for (var i = block_words.length - 1; i &gt;= 0; i--) {
+        if (getTitleTag().includes(block_words[i])) {
+            return true;
+        }
+    }
 
-<small><code><a href="https://dmalau.github.io/tags/stupidbot">stupidbot</a></code></small>
+    return false;
+}
 
+function getRecipe() {
+    var recipe = {};
 
-<small><code><a href="https://dmalau.github.io/tags/fix">fix</a></code></small>
+    // title
+    recipe.title = $(&quot;h1&quot;).first().text().trim();
+    recipe.image = $(&quot;#recipe_image img&quot;).attr(&quot;src&quot;);
 
-    
-  </p>
+    // todo: description
 
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-pagination-links/">StupidBot Fix untuk Error &ldquo;Scraping pagination links&rdquo;</a>
-    
-    
-    <br>
-    <small class="text-secondary">Apr 14, 2021</small>
-    
+    // author
+    recipe.author = $(&quot;span[itemprop=author] span[itemprop=name]&quot;).text();
+    recipe.time = $(&quot;.icf--timer&quot;).parent().text().trim();
 
-<small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
+    if (recipe.time.includes(&quot;\n&quot;)) {
+        recipe.time = recipe.time.substr(0, recipe.time.indexOf(&quot;\n&quot;));
+    }
 
+    recipe.servings = $(&quot;.icf--user&quot;).parent().text().trim();
 
-<small><code><a href="https://dmalau.github.io/tags/stupidbot">stupidbot</a></code></small>
+    // author location
+    recipe.author_location = $(&quot;#location&quot;).text();
 
-    
-  </p>
+    recipe.author_avatar = $(&quot;.author-container img&quot;).attr(&quot;src&quot;);
 
-  <p>
-    <a href="https://dmalau.github.io/stupidbot-fix-untuk-error-scraping-finished-0-recipes/">StupidBot Fix untuk Error &ldquo;Scraping finished&rdquo;</a>
-    
-    
-    <br>
-    <small class="text-secondary">Apr 13, 2021</small>
-    
+    recipe.author_description = $(&quot;#author_profile .py-2&quot;).text().trim();
 
-<small><code><a href="https://dmalau.github.io/tags/error">error</a></code></small>
+    recipe.ingredients = [];
 
+    $(&quot;li.leading-tight&quot;).each(function (i) {
+        var ingredient = {};
+        ingredient.quantity = $(this)
+            .find(&quot;.font-semibold&quot;)
+            .text()
+            .trim();
+        $(this).find(&quot;.font-semibold&quot;).remove();
+        ingredient.name = $(this)
+            .find(&quot;div[itemprop=ingredients]&quot;)
+            .text()
+            .trim();
 
-<small><code><a href="https://dmalau.github.io/tags/stupidbot">stupidbot</a></code></small>
+        recipe.ingredients.push(ingredient);
+    });
 
+    recipe.steps = [];
 
-<small><code><a href="https://dmalau.github.io/tags/fix">fix</a></code></small>
+    $(&quot;li.step&quot;).each(function (i) {
+        var step = {};
+        step.instruction = $(this).text().trim();
+        step.images = [];
 
-    
-  </p>
+        $(this)
+            .find(&quot;img&quot;)
+            .each(function () {
+                var image = $(this).attr(&quot;src&quot;);
+                if (image &amp;&amp; image.trim().length) {
+                    step.images.push(image);
+                }
+            });
+
+        recipe.steps.push(step);
+    });
+
+    recipe.related_keywords = [];
+
+    $(&quot;.btn-search-term&quot;).each(function (i) {
+        recipe.related_keywords.push($(this).text().trim());
+    });
+
+    return recipe;
+}
+</code></pre><p>Semoga membantu. :)</p>
 
     </article>
   </div>
