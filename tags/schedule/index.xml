@@ -6,7 +6,7 @@
     <description>Recent content in schedule on My Life Journey</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Nov 2021 12:39:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Nov 2021 01:39:00 +0000</lastBuildDate>
     
 	<atom:link href="https://dmalau.github.io/tags/schedule/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Schedule Hugo dan Auto Deploy ke Server dengan Akses SSH</title>
       <link>https://dmalau.github.io/schedule-hugo-and-auto-deploy-to-server-using-rsync/</link>
-      <pubDate>Thu, 04 Nov 2021 12:39:00 +0000</pubDate>
+      <pubDate>Thu, 04 Nov 2021 01:39:00 +0000</pubDate>
       
       <guid>https://dmalau.github.io/schedule-hugo-and-auto-deploy-to-server-using-rsync/</guid>
       <description>Berikut ini tutorial schedule hugo dan langsung deploy ke server sendiri dengan rsync. Syaratnya hanya satu, harus ada akses SSH ke servernya. Kali ini agak kompleks gak apa-apa ya, worth it kok hehe..
