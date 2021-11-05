@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="https://dmalau.github.io/css/bootstrap.min.css" />
 
   
-  <title>Tags | My Life Journey</title>
+  <title>Schedule Hugo dan Auto Deploy ke Server dengan Akses SSH | My Life Journey</title>
   
 
   <style>
@@ -183,32 +183,91 @@ blockquote,
   
   <div class="container">
     <article>
-      <h1>Tags</h1>
+      <h1>Schedule Hugo dan Auto Deploy ke Server dengan Akses SSH</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  Nov 4, 2021
+  </small>
+  
+
+<small><code><a href="https://dmalau.github.io/tags/hugo">hugo</a></code></small>
 
 
-  <p><a href="/tags/ads/"><code>ads</code></a> 1</p>
+<small><code><a href="https://dmalau.github.io/tags/schedule">schedule</a></code></small>
 
-  <p><a href="/tags/awk/"><code>awk</code></a> 1</p>
 
-  <p><a href="/tags/banner/"><code>banner</code></a> 1</p>
+<small><code><a href="https://dmalau.github.io/tags/ssh">ssh</a></code></small>
 
-  <p><a href="/tags/command-line/"><code>command-line</code></a> 1</p>
 
-  <p><a href="/tags/error/"><code>error</code></a> 5</p>
+<small><code><a href="https://dmalau.github.io/tags/rsync">rsync</a></code></small>
 
-  <p><a href="/tags/fix/"><code>fix</code></a> 4</p>
+</p>
+<p>Berikut ini tutorial schedule hugo dan langsung deploy ke server sendiri dengan rsync. Syaratnya hanya satu, harus ada akses SSH ke servernya. Kali ini agak kompleks gak apa-apa ya, worth it kok hehe..</p>
+<ul>
+<li>Login ke server dengan putty (SSH)</li>
+<li>Buat direktori baru dan masuk ke dalamnya:<br>
+<code>mkdir .ssh</code><br>
+<code>cd .ssh</code></li>
+<li>Lalu ketik perintah berikut:<br>
+<code>ssh-keygen -t rsa -b 4096 -C &quot;ganti.dengan.email.sendiri@gmail.com&quot;</code><br>
+<img src="https://i.imgur.com/0bLN1Bo.png" alt="ssh-keygen"></li>
+<li>Beri nama untuk key-nya, saya gunakan nama <strong>github-actions</strong></li>
+<li>Passphrase dikosongkan saja (tekan Enter 2 kali)</li>
+<li>Copy isi key ke file authorized_keys:<br>
+<code>cat github-actions.pub &gt;&gt; authorized_keys</code></li>
+<li>Setting secret baru di repository github dengan nama-nama ini: SSH_HOST, SSH_USER dan SSH_PRIVATE_KEY<br>
+<img src="https://i.imgur.com/urTvX4x.png" alt="secret key"></li>
+<li>Isi kolom value SSH_HOST dengan IP address server</li>
+<li>Isi kolom value SSH_USER dengan username login SSH server</li>
+<li>Buka file github-actions:<br>
+<code>nano github_actions</code><br>
+<img src="https://i.imgur.com/S1ytH0v.png" alt="nano github_actions"></li>
+<li>Isi kolom value SSH_PRIVATE_KEY dengan isi file github-actions, pastikan dimulai dengan<br>
+<code>-----BEGIN OPENSSH PRIVATE KEY-----</code><br>
+dan diakhiri dengan<br>
+<code>-----END OPENSSH PRIVATE KEY-----</code></li>
+<li>Buka file main.yml, ganti path <strong>/home/resepcinta.my.id/public_html/</strong> dengan path website yang dituju, lalu save</li>
+</ul>
+<pre><code>    name: Build Using Cron Schedule
+    on:
+      schedule:
+        - cron: &quot;0 0 * * *&quot;
+      workflow_dispatch:
+    
+    jobs:
+      build-and-deploy:
+        name: Build and Deploy
+        runs-on: [ ubuntu-latest ]
+        steps:
+          - name: Checkout Repo
+        uses: actions/checkout@v2
 
-  <p><a href="/tags/floating/"><code>floating</code></a> 1</p>
+          - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: &quot;0.88.0&quot;
 
-  <p><a href="/tags/hugo/"><code>hugo</code></a> 2</p>
+          - name: Build Static HTML
+        run: hugo
 
-  <p><a href="/tags/rsync/"><code>rsync</code></a> 1</p>
+          - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+    
+          - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} &gt;&gt; ~/.ssh/known_hosts
 
-  <p><a href="/tags/schedule/"><code>schedule</code></a> 1</p>
-
-  <p><a href="/tags/ssh/"><code>ssh</code></a> 1</p>
-
-  <p><a href="/tags/stupidbot/"><code>stupidbot</code></a> 5</p>
+          - name: Deploy ke server dengan rsync
+        run: rsync -avz ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/resepcinta.my.id/public_html/
+</code></pre><ul>
+<li>Push atau upload manual file main.yml ke folder .github/workflows/ di repository yang bersangkutan</li>
+<li>Jalankan script actions secara manual lewat github</li>
+</ul>
+<p>Semoga membantu. :)</p>
 
     </article>
   </div>
