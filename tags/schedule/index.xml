@@ -21,8 +21,7 @@
  Login ke server dengan putty (SSH) Buat direktori baru dan masuk ke dalamnya:
 mkdir .ssh
 cd .ssh Lalu ketik perintah berikut:
-ssh-keygen -t rsa -b 4096 -C &amp;quot;ganti.dengan.email.sendiri@gmail.com&amp;quot;
- Beri nama untuk key-nya, saya gunakan nama github-actions Passphrase dikosongkan saja (tekan Enter 2 kali) Copy isi key ke file authorized_keys:</description>
+ssh-keygen -t rsa -b 4096 -C &amp;quot;ganti.dengan.email.sendiri@gmail.com&amp;quot; Beri nama untuk key-nya, saya gunakan nama github-actions Passphrase dikosongkan saja (tekan Enter 2 kali) Copy isi key ke file authorized_keys:</description>
     </item>
     
   </channel>
